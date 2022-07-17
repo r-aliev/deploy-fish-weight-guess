@@ -19,5 +19,5 @@ def main():
 
 
 if __name__ == '__main__':
-    from api.utils import PredictionModel
+    from core.settings import PredictionModel
     main()

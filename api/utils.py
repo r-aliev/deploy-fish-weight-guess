@@ -1,3 +1,9 @@
+def format_float(arr):
+    float_formatter = "{:.2f}".format
+    for i in range(len(arr)):
+        arr[i] = float_formatter(arr[i])
+
+
 class PredictionModel:
     def __init__(self, encoder, model):
         import pickle
@@ -12,10 +18,3 @@ class PredictionModel:
         np.hstack([X.values, encoded_part])
 
         return self.model.predict(X)
-
-
-def format_float(arr):
-    float_formatter = "{:.2f}".format
-    for i in range(len(arr)):
-        arr[i] = float_formatter(arr[i])
-
