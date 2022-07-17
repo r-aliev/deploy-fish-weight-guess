@@ -9,4 +9,8 @@ class ApiConfig(AppConfig):
 
     path = 'api/weight-prediction.model'
 
-    model = pickle.load(open(path, 'rb'))
+    model = None
+    try:
+        model = pickle.load(open(path, 'rb'))
+    except EOFError as e:
+        print(e)
